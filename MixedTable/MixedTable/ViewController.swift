@@ -93,7 +93,6 @@ final class ViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @objc private func shuffleRows(){
         let newOrder = Set(0...29)
         for (oldPosition, newPosition) in newOrder.enumerated() {
-            print("oldPosition:\(oldPosition), newPosition:\(newPosition), value: \(self.tableViewData[oldPosition])")
             self.tableViewData.insert(self.tableViewData.remove(at: oldPosition), at: newPosition)
             self.tableView.moveRow(
                 at: IndexPath(row: oldPosition, section: 0),
